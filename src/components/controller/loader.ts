@@ -1,5 +1,7 @@
 class Loader {
-    constructor(baseLink, options) {
+    baseLink: any;
+    options: any;
+    constructor(baseLink: any, options: any) {
         this.baseLink = baseLink;
         this.options = options;
     }
@@ -9,11 +11,11 @@ class Loader {
         callback = () => {
             console.error('No callback for GET response');
         }
-    ) {
+    ): void {
         this.load('GET', endpoint, callback, options);
     }
 
-    errorHandler(res) {
+    errorHandler(res: { ok: any; status: number; statusText: string | undefined; }) {
         if (!res.ok) {
             if (res.status === 401 || res.status === 404)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
