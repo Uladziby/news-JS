@@ -1,9 +1,9 @@
-import { GetResponse, IData } from '../../interfaces';
+import { IData } from '../../interfaces';
 import AppLoader from './appLoader';
 
 
 class AppController extends AppLoader {
-    getSources(callback: () => void){
+    getSources(callback: (data:IData) => void){
         super.getResp(
             {
                 endpoint: 'sources',

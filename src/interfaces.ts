@@ -30,5 +30,9 @@ export interface IerrorHandler{
     statusText: string | undefined;
 }
 export interface IData{
+    name: string;
+    id: string;
+    articles: [];
+    sources: [];
 
 }

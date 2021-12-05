@@ -2,9 +2,9 @@ import { GetResponse,  IData } from './../../interfaces';
 class Loader {
     baseLink  : string;
     options : {} | undefined ;
-    constructor(baseLink :GetResponse , options:GetResponse) {
-        this.baseLink = baseLink.endpoint;
-        this.options = options.options;
+    constructor(baseLink :string , options:{apiKey : string}) {
+        this.baseLink = baseLink;
+        this.options = options;
     }
 
     getResp(
