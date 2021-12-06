@@ -20,19 +20,28 @@ export interface GetResponse {
     options?: {};
 }
 
-export interface ISources{
-    sources : String[]
+export interface ISources {
+    sources: String[];
 }
 
-export interface IerrorHandler{
+export interface IerrorHandler {
     ok: string;
-    status : number;
+    status: number;
     statusText: string | undefined;
 }
-export interface IData{
+export interface IData {
     name: string;
     id: string;
     articles: [];
     sources: [];
+}
 
+export interface IDrawData {
+    urlToImage: string;
+    author: string;
+    publishedAt: string;
+    title: string;
+    source: { name: string };
+    description: string;
+    url: string;
 }
