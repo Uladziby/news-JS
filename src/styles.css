@@ -51,7 +51,9 @@
   cursor: pointer;
   transform: translateY(-10px);
 }
-
+.sources{
+  transition: all 0.5s ease-in;
+}
 @media screen and (max-width :1024px) {
   header h1{
     display: flex;
@@ -60,10 +62,36 @@
     transition: 0.5s;
   }
   .sources{
-    height: 7rem;
+    height: 100px;
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". . "
+      ". . "; 
   }
   .source__item{
     padding: 0.5rem
   }
 }
 
+@media screen and (max-width :540px) {
+  header h1{
+    
+  }
+  .sources{
+    height: 100px;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". . ."
+      ". . ."
+      ". . ."; 
+  }
+  .source__item{
+
+  }
+}
