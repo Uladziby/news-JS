@@ -1,9 +1,6 @@
-import { IData, ISources } from './../../interfaces';
-import { getNews } from '../../interfaces';
+import { IGetNews } from './../../interfaces';
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
-
-
 
 class App {
     readonly controller: AppController;
@@ -17,13 +14,14 @@ class App {
         document
             .querySelector('.sources')!
             .addEventListener('click', (e: any ): void => {
-                this.controller.getNews(e , (data: IData) => {
-                    console.log(data)
+                this.controller.getNews(e , (data: IGetNews) => {
                     this.view.drawNews(data);
                 })
             });
             
-        this.controller.getSources((data:IData) => this.view.drawSources(data));
+        this.controller.getSources((data:IGetNews) => {
+            this.view.drawSources(data)
+        });
     }
 }
 

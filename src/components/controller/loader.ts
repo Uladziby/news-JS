@@ -1,4 +1,4 @@
-import { GetResponse,  IData } from './../../interfaces';
+import { IGetNews, IGetResponse } from './../../interfaces';
 class Loader {
     baseLink  : string;
     options : {} | undefined ;
@@ -8,8 +8,8 @@ class Loader {
     }
 
     getResp(
-        { endpoint , options }:GetResponse,
-        callback = (data:IData) => {
+        { endpoint , options }:IGetResponse,
+        callback = (data:IGetNews) => {
             console.error('No callback for GET response');
         }
     ) {
@@ -37,7 +37,7 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load(method: string, endpoint: string, callback: { (data: IData): void}, options:{}) {
+    load(method: string, endpoint: string, callback: { (data: IGetNews): void}, options:{}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
